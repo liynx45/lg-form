@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="public/style/login.css?v=<?= $version ?>">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+</head>
+
+<body>
+    <section class="hero">
+        <div class="outer">
+            <div class="line"></div>
+            <div class="left-log">
+                <img src="" alt="">
+            </div>
+            <div class="right-log">
+                <form action="" method="post">
+                    <div class="top-log">
+                        <h2><span style="color: #5B0888;">Welcome</span> <br>to Dtask Manager</h2>
+                        <p>Login your account!</p>
+                    </div>
+                    <div class="input-blok">
+                        <div class="user">
+                            <input type="text" name="username" id="username" required>
+                            <span>Username</span>
+                            <i class="uil uil-user"></i>
+                        </div>
+                        <div class="user">
+                            <input type="password" name="password" id="password" required>
+                            <span>Password</span>
+                            <i class="uil uil-eye"></i>
+                            <i class="uil uil-eye-slash active"></i>
+                        </div>
+                        <button type="submit" name="login">Login</button>
+                    </div>
+                    <span style="color: white;"><i class="uil uil-lock"></i> Hubungi Admin untuk meminta akses!</span>
+                </form>
+
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const passwordInput = document.getElementById("password");
+        const togglePass = document.querySelectorAll(".uil");
+
+        togglePass.forEach(btn => {
+            btn.addEventListener("click", () => {
+            if(passwordInput.type === "password") {
+                passwordInput.type = "text";
+                document.querySelector(".uil-eye").classList.add("active");
+                document.querySelector(".uil-eye-slash").classList.remove("active");
+            } else {
+                passwordInput.type = "password";
+                document.querySelector(".uil-eye").classList.remove("active");
+                document.querySelector(".uil-eye-slash").classList.add("active");
+            }
+        });
+        })
+    </script>
+</body>
+
+</html>
